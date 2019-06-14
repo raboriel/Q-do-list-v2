@@ -1,20 +1,46 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
-
-
+import { LinearGradient } from 'expo';
+import { gradientStart, gradientEnd } from './utils/Colors';
+import Header from './components/Header';
+import Input from './components/Input';
+const headerTitle = 'To Do';
 export default class Main extends React.Component {
+  state = {
+    inputValue: ''
+  };
+  newInputValue = value => {
+    this.setState({
+      inputValue: value
+    });
+  };
   render() {
+    const { inputValue } = this.state;
     return (
-      <View style={styles.container}>
+      <LinearGradient
+        colors={[gradientStart, gradientEnd]}
+        style={styles.container}
+      >
         <StatusBar barStyle="light-content" />
-        <Text>hello</Text>
-      </View>
+        <View style={styles.centered}>
+          <Header title={headerTitle} />
+        </View>
+        <View style={styles.inputContainer}>
+          <Input inputValue={inputValue} onChangeText={this.newInputValue} />
+        </View>
+      </LinearGradient>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#5D6C89',
+    flex: 1
+  },
+  centered: {
+    alignItems: 'center'
+  },
+  inputContainer: {
+    marginTop: 40,
+    paddingLeft: 15
   }
 });

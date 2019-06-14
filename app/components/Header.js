@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+
+
 const Header = ({ title }) => (
   <View style={styles.headerContainer}>
     <Text style={styles.headerText}>{title.toUpperCase()}</Text>
