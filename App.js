@@ -1,19 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>qdiary</Text>
-    </View>
-  );
+import Main from './app/Main';
+export default class App extends React.Component {
+  render() {
+    return <Main />;
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#5D6C89',
+//     alignItems: 'center',
+//   },
+//   appTitle: {
+//     color: '#FBF6F3',
+//     fontSize: 36,
+//     marginTop: 60,
+//     marginBottom: 30,
+//     fontWeight: '300'
+//   },
+// });
