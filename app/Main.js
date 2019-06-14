@@ -4,7 +4,11 @@ import { LinearGradient } from 'expo';
 import { gradientStart, gradientEnd } from './utils/Colors';
 import Header from './components/Header';
 import Input from './components/Input';
-const headerTitle = 'To Do';
+
+
+const headerTitle = 'Q Do List';
+
+
 export default class Main extends React.Component {
   state = {
     inputValue: ''
@@ -44,3 +48,19 @@ const styles = StyleSheet.create({
     paddingLeft: 15
   }
 });
+
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#5D6C89',
+//     alignItems: 'center',
+//   },
+//   appTitle: {
+//     color: '#FBF6F3',
+//     fontSize: 36,
+//     marginTop: 60,
+//     marginBottom: 30,
+//     fontWeight: '300'
+//   },
+// });
