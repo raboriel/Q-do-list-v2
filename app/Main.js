@@ -37,29 +37,14 @@ export default class Main extends React.Component {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   centered: {
-    alignItems: 'center'
+    alignItems: 'center',
+    fontWeight: '300',
   },
   inputContainer: {
     marginTop: 40,
     paddingLeft: 15
   }
 });
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#5D6C89',
-//     alignItems: 'center',
-//   },
-//   appTitle: {
-//     color: '#FBF6F3',
-//     fontSize: 36,
-//     marginTop: 60,
-//     marginBottom: 30,
-//     fontWeight: '300'
-//   },
-// });
