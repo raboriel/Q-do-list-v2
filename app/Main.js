@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { LinearGradient } from 'expo';
-import { gradientStart, gradientEnd } from './utils/Colors';
 import Header from './components/Header';
 import Input from './components/Input';
 
@@ -22,7 +21,7 @@ export default class Main extends React.Component {
     const { inputValue } = this.state;
     return (
       <LinearGradient
-        colors={[gradientStart, gradientEnd]}
+        colors={['#55637d', '#4b576e']}
         style={styles.container}
       >
         <StatusBar barStyle="light-content" />
