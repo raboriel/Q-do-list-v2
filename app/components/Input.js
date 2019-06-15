@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 
-const Input = ({ inputValue, onChangeText, onDoneAddItem }) => (
+const Input = ({ inputValue, onChangeText, onDoneAddList }) => (
   <TextInput
     style={styles.input}
     value={inputValue}
@@ -10,13 +10,13 @@ const Input = ({ inputValue, onChangeText, onDoneAddItem }) => (
     placeholderTextColor={'#f1a895'}
     multiline={true}
     autoCapitalize="sentences"
-    underlineColorAndroid="transparent"
+    underlineColorAndroid="white"
     selectionColor={'white'}
     maxLength={30}
     returnKeyType="done"
     autoCorrect={false}
     blurOnSubmit={true}
-    onSubmitEditing={onDoneAddItem}
+    onSubmitEditing={onDoneAddList}
   />
 );
 const styles = StyleSheet.create({

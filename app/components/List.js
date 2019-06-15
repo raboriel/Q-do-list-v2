@@ -50,7 +50,7 @@ class List extends Component {
                <View style={styles.button}>
                  <TouchableOpacity onPressOut={() => deleteList(id)}>
                    <MaterialIcons
-                     name="delete-forever"
+                     name="delete"
                      size={24}
                      color={deleteIconColor}
                    />
@@ -75,7 +75,9 @@ const styles = StyleSheet.create({
 		marginBottom: 10,
 	},
 	column: {
-
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: width / 1.5
 	},
 	text: {
 		fontWeight: '500',
