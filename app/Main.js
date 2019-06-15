@@ -177,15 +177,17 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginTop: 30,
-    paddingLeft: 15
+    padding: 20
   },
   list: {
+    alignItems: 'center',
     flex: 1,
-    marginTop: 70,
-    paddingLeft: 15,
+    marginTop: 30,
+    padding: 15,
     marginBottom: 10
   },
   scrollableList: {
     marginTop: 15
   },
+
 });

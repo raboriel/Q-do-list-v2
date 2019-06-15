@@ -64,7 +64,7 @@ class List extends Component {
 
 const styles = StyleSheet.create({
   container: {
-		width: width - 50,
+		width: width - 30,
 		flexDirection: 'row',
 		borderRadius: 5,
 		backgroundColor: '#FBF6F3',
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
 	column: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: width / 1.5
+
 	},
 	text: {
 		fontWeight: '500',
