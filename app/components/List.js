@@ -14,7 +14,7 @@ class List extends Component {
     if (isCompleted) {
       incompleteList(id);
     } else {
-      completeItme(id);
+      completeList(id);
     }
    };
   render() {
@@ -27,8 +27,8 @@ class List extends Component {
                    style={[
                      styles.circle,
                      isCompleted
-                       ? { borderColor: '#90ee90' }
-                       : { borderColor: '#ecbfbe' }
+                       ? { borderColor: '#36D6E7' }
+                       : { borderColor: '#FEB06A' }
                    ]}
                  />
                </TouchableOpacity>
@@ -52,7 +52,7 @@ class List extends Component {
                    <MaterialIcons
                      name="delete"
                      size={24}
-                     color={deleteIconColor}
+                     color={'#FEB06A'}
                    />
                  </TouchableOpacity>
                </View>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 		width: width - 50,
 		flexDirection: 'row',
 		borderRadius: 5,
-		backgroundColor: 'white',
+		backgroundColor: '#FBF6F3',
 		height: width / 8,
 		alignItems: 'center',
 		justifyContent: 'space-between',

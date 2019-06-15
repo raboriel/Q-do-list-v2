@@ -10,8 +10,8 @@ const Input = ({ inputValue, onChangeText, onDoneAddList }) => (
     placeholderTextColor={'#f1a895'}
     multiline={true}
     autoCapitalize="sentences"
-    underlineColorAndroid="white"
-    selectionColor={'white'}
+    underlineColorAndroid="#FBF6F3"
+    selectionColor={'#FBF6F3'}
     maxLength={30}
     returnKeyType="done"
     autoCorrect={false}

@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     marginTop: 40
   },
   headerText: {
-    color: 'white',
+    color: '#FBF6F3',
     fontSize: 26,
     fontWeight: '500'
   }
