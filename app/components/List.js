@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const { height, width } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
+
+
 
 class List extends Component {
   // toggle for checkbox
@@ -16,7 +18,7 @@ class List extends Component {
     }
    };
   render() {
-    const { text, deleteList, id, isCompleted }
+    const { text, deleteList, id, isCompleted } = this.props;
     return (
       <View style={styles.container}>
              <View style={styles.column}>
@@ -55,23 +57,41 @@ class List extends Component {
                  </TouchableOpacity>
                </View>
              ) : null}
-           </View>
+        </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-  },
-  column: {
-  },
-  text: {
-  },
-  circle: {
-  },
-  button: {
-  }
-});
+		width: width - 50,
+		flexDirection: 'row',
+		borderRadius: 5,
+		backgroundColor: 'white',
+		height: width / 8,
+		alignItems: 'center',
+		justifyContent: 'space-between',
+		marginTop: 5,
+		marginBottom: 10,
+	},
+	column: {
 
+	},
+	text: {
+		fontWeight: '500',
+		fontSize: 16,
+		marginVertical: 15
+	},
+	circle: {
+		width: 30,
+		height: 30,
+		borderRadius: 15,
+		borderWidth: 3,
+		margin: 10
+	},
+	button: {
+		marginRight: 10
+	}
+});
 
 export default List;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
-import { inputPlaceholder } from '../utils/Colors';
 
 const Input = ({ inputValue, onChangeText, onDoneAddItem }) => (
   <TextInput
@@ -8,7 +7,7 @@ const Input = ({ inputValue, onChangeText, onDoneAddItem }) => (
     value={inputValue}
     onChangeText={onChangeText}
     placeholder="Add an list!"
-    placeholderTextColor={inputPlaceholder}
+    placeholderTextColor={'#f1a895'}
     multiline={true}
     autoCapitalize="sentences"
     underlineColorAndroid="transparent"
