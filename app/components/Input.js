@@ -6,8 +6,8 @@ const Input = ({ inputValue, onChangeText, onDoneAddList }) => (
     style={styles.input}
     value={inputValue}
     onChangeText={onChangeText}
-    placeholder="Add an list!"
-    placeholderTextColor={'#f1a895'}
+    placeholder="Add a list!"
+    placeholderTextColor={'#bbb'}
     multiline={true}
     autoCapitalize="sentences"
     underlineColorAndroid="#FBF6F3"
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   input: {
     paddingTop: 10,
     paddingRight: 15,
-    fontSize: 34,
+    fontSize: 26,
     color: 'white',
     fontWeight: '500'
   }

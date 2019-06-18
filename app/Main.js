@@ -5,7 +5,8 @@ import {
 	StatusBar,
 	ActivityIndicator,
 	ScrollView,
-	AsyncStorage
+	AsyncStorage,
+  Dimensions
 } from 'react-native';
 import { LinearGradient } from 'expo';
 import uuid from 'uuid/v1';
@@ -14,7 +15,7 @@ import uuid from 'uuid/v1';
 import Header from './components/Header';
 import Input from './components/Input';
 import List from './components/List';
-
+const { width } = Dimensions.get('window');
 
 const headerTitle = 'Q Do List';
 
@@ -137,6 +138,7 @@ export default class Main extends React.Component {
         <View style={styles.centered}>
           <Header title={headerTitle} />
         </View>
+        <View style={styles.listContainer}>
         <View style={styles.inputContainer}>
           <Input
           inputValue={inputValue}
@@ -163,6 +165,7 @@ export default class Main extends React.Component {
         				 <ActivityIndicator size="large" color="white" />
         			)}
         	</View>
+        </View>
       </LinearGradient>
     );
   }
@@ -170,21 +173,39 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center'
+  },
+  listContainer: {
+    backgroundColor: '#fff',
+    flex: 1,
+    width: width - 25,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    marginTop: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+    	width: 0,
+    	height: 2,
+    },
+    shadowOpacity: 0.32,
+    shadowRadius: 5.46,
+
+    elevation: 9,
   },
   centered: {
     alignItems: 'center',
     fontWeight: '300',
   },
   inputContainer: {
-    marginTop: 30,
-    padding: 20
+     padding: 10,
+     borderBottomColor: '#bbb',
+     borderBottomWidth: 1,
+     fontSize: 24
   },
   list: {
     alignItems: 'center',
     flex: 1,
-    marginTop: 30,
     padding: 15,
-    marginBottom: 10
   },
   scrollableList: {
     marginTop: 15

@@ -64,15 +64,12 @@ class List extends Component {
 
 const styles = StyleSheet.create({
   container: {
-		width: width - 30,
-		flexDirection: 'row',
-		borderRadius: 5,
-		backgroundColor: '#FBF6F3',
-		height: width / 8,
-		alignItems: 'center',
 		justifyContent: 'space-between',
-		marginTop: 5,
-		marginBottom: 10,
+    width: width - 50,
+    borderBottomColor: '#bbb',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    flexDirection: 'row',
+    alignItems: 'center'
 	},
 	column: {
     flexDirection: 'row',
