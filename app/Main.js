@@ -131,14 +131,11 @@ export default class Main extends React.Component {
     const { inputValue, loadingLists, allLists } = this.state;
     return (
       <LinearGradient
-        colors={['#55637d', '#4b576e']}
+        colors={['#1C4670', '#2c4660']}
         style={styles.container}
       >
         <StatusBar barStyle="light-content" />
-        <View style={styles.centered}>
-          <Header title={headerTitle} />
-        </View>
-        <View style={styles.listContainer}>
+        <Header title={headerTitle} />
         <View style={styles.inputContainer}>
           <Input
           inputValue={inputValue}
@@ -146,6 +143,7 @@ export default class Main extends React.Component {
           onDoneAddList={this.onDoneAddList}
           />
         </View>
+        <View style={styles.listContainer}>
         <View style={styles.list}>
         		{loadingLists ? (
         			   <ScrollView contentContainerStyle={styles.scrollableList}>
@@ -176,30 +174,19 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   listContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: '#EBF5F7',
     flex: 1,
     width: width - 25,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    marginTop: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-    	width: 0,
-    	height: 2,
-    },
-    shadowOpacity: 0.32,
-    shadowRadius: 5.46,
+    marginTop: 10,
 
-    elevation: 9,
-  },
-  centered: {
-    alignItems: 'center',
-    fontWeight: '300',
   },
   inputContainer: {
-     padding: 10,
-     borderBottomColor: '#bbb',
-     borderBottomWidth: 1,
+     backgroundColor: 'white',
+     width: width - 25,
+     marginTop: 10,
+     borderRadius: 10,
      fontSize: 24
   },
   list: {
@@ -207,8 +194,4 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
   },
-  scrollableList: {
-    marginTop: 15
-  },
-
 });

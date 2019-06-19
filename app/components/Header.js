@@ -9,10 +9,10 @@ const Header = ({ title }) => (
 );
 const styles = StyleSheet.create({
   headerContainer: {
-    marginTop: 40
+    marginTop: 30
   },
   headerText: {
-    color: '#FBF6F3',
+    color: 'white',
     fontSize: 35,
     fontWeight: '500'
   }

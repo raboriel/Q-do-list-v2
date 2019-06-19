@@ -27,8 +27,8 @@ class List extends Component {
                    style={[
                      styles.circle,
                      isCompleted
-                       ? { borderColor: '#36D6E7' }
-                       : { borderColor: '#FEB06A' }
+                       ? { borderColor: '#1DC690' }
+                       : { borderColor: '#FF8F50' }
                    ]}
                  />
                </TouchableOpacity>
@@ -52,7 +52,7 @@ class List extends Component {
                    <MaterialIcons
                      name="delete"
                      size={24}
-                     color={'#FEB06A'}
+                     color={'#278AB0'}
                    />
                  </TouchableOpacity>
                </View>
@@ -66,10 +66,11 @@ const styles = StyleSheet.create({
   container: {
 		justifyContent: 'space-between',
     width: width - 50,
-    borderBottomColor: '#bbb',
+    height: 54,
+    borderBottomColor: 'lightgray',
     borderBottomWidth: StyleSheet.hairlineWidth,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
 	},
 	column: {
     flexDirection: 'row',
