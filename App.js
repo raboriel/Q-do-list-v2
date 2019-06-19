@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from './app/Main';
+import Diary from './app/Diary';
 // import navigation from react-navigation
 // $ yarn add react-navigation
 import {
@@ -16,8 +17,8 @@ const TodoStack = createStackNavigator({
   Todo: Main,
 })
 
-const CompletedStack = createStackNavigator({
-  Completed: Main
+const DiaryStack = createStackNavigator({
+  Diary: Diary
 })
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
@@ -35,7 +36,7 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
 // Tab Navigation
 const TabNavigator = createBottomTabNavigator({
   Todo: Main,
-  Completed: Main,
+  Diary: Diary,
 },
 {
   defaultNavigationOptions: ({ navigation }) => ({
