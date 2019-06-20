@@ -15,6 +15,7 @@ import uuid from 'uuid/v1';
 // import from components
 import Header from './components/Header';
 import List from './components/List';
+import Main from './Main'
 
 // set devise's width
 const { width } = Dimensions.get('window');
@@ -22,19 +23,23 @@ const headerTitle = 'Q Do List';
 
 export default class Completed extends React.Component {
   state = {
+    inputValue: '',
+    loadingLists: false,
+    loadingComLists: false,
+    allLists: {},
     comLists: {},
+    isCompleted: false
   };
 
   componentDidMount = () => {
-    this.loadingLists();
+    this.loadingComLists();
   };
 
-  // get lists from AsyncStorage
-  loadingLists = async () => {
+  loadingComLists = async () => {
    try {
-     const allLists = await AsyncStorage.getItem('Completed');
+     const comLists = await AsyncStorage.getItem('Todos');
      this.setState({
-       loadingLists: true,
+       loadingComLists: true,
        comLists: JSON.parse(comLists) || {}
      });
    } catch (err) {
@@ -42,25 +47,9 @@ export default class Completed extends React.Component {
    }
  };
 
-  deleteList = id => {
-		this.setState(prevState => {
-			const allLists = prevState.allLists;
-			delete allLists[id];
-			const newState = {
-				...prevState,
-				...allLists
-			};
-			this.saveLists(newState.allLists);
-			return { ...newState };
-		});
-	};
-
-  saveLists = newList => {
-   const saveList = AsyncStorage.setItem('Completed', JSON.stringify(newList));
-  };
-
   render() {
-    const { loadingLists, allLists } = this.state;
+    const { inputValue, loadingLists, loadingComLists, allLists, comLists, isCompleted} = this.state;
+
     return (
       <LinearGradient
         colors={['#1C4670', '#2c4660']}
@@ -70,7 +59,7 @@ export default class Completed extends React.Component {
         <Header title={headerTitle} />
         <View style={styles.listContainer}>
         <View style={styles.list}>
-        		{loadingLists ? (
+        		{loadingComLists ? (
         			   <ScrollView contentContainerStyle={styles.scrollableList}>
         						{Object.values(allLists)
         							.reverse()

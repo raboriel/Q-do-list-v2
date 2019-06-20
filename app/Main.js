@@ -27,6 +27,7 @@ export default class Main extends React.Component {
   state = {
     inputValue: '',
     loadingLists: false,
+    loadingComLists: false,
     allLists: {},
     comLists: {},
     isCompleted: false
@@ -54,6 +55,18 @@ export default class Main extends React.Component {
      console.log(err);
    }
  };
+
+ loadingComLists = async () => {
+  try {
+    const comLists = await AsyncStorage.getItem('Todos');
+    this.setState({
+      loadingComLists: true,
+      comLists: JSON.parse(comLists) || {}
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
  onDoneAddList = () => {
     const { inputValue } = this.state;
@@ -85,21 +98,16 @@ export default class Main extends React.Component {
   deleteList = id => {
 		this.setState(prevState => {
 			const allLists = prevState.allLists;
-      const comLists = allLists[id]
+      const comLists = prevState.comLists;
+      comLists[id] = allLists[id]
 			delete allLists[id];
 			const newState = {
 				...prevState,
 				...allLists,
+        ...comLists
 			};
-      const newStateCom = {
-        ...comLists,
-      };
-
-			this.saveLists(newState.allLists);
-      this.saveLists(newStateCom.comLists);
-      console.log('this.state', this.state.comLists);
-      console.log('comlists', comLists);
-
+      this.saveLists(newState.allLists);
+      this.saveLists(newState.comLists);
       // this.clearAsyncStorage()
 			return { ...newState };
 		});
@@ -147,7 +155,7 @@ export default class Main extends React.Component {
    const saveList = AsyncStorage.setItem('Todos', JSON.stringify(newList));
   };
   render() {
-    const { inputValue, loadingLists, allLists } = this.state;
+    const { inputValue, loadingLists, loadingComLists, allLists, comLists, isCompleted} = this.state;
     return (
       <LinearGradient
         colors={['#1C4670', '#2c4660']}
@@ -163,7 +171,6 @@ export default class Main extends React.Component {
           />
         </View>
         <View style={styles.listContainer}>
-
         <View style={styles.list}>
         		{loadingLists ? (
         			   <ScrollView contentContainerStyle={styles.scrollableList}>
