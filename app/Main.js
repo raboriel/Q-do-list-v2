@@ -8,15 +8,19 @@ import {
 	AsyncStorage,
   Dimensions
 } from 'react-native';
+// For gradient background color
 import { LinearGradient } from 'expo';
 import uuid from 'uuid/v1';
+// drag and drop sort
 
 // import from components
 import Header from './components/Header';
 import Input from './components/Input';
 import List from './components/List';
-const { width } = Dimensions.get('window');
 
+
+// set devise's width
+const { width } = Dimensions.get('window');
 const headerTitle = 'Q Do List';
 
 export default class Main extends React.Component {
@@ -24,6 +28,7 @@ export default class Main extends React.Component {
     inputValue: '',
     loadingLists: false,
     allLists: {},
+    comLists: {},
     isCompleted: false
   };
 
@@ -80,15 +85,29 @@ export default class Main extends React.Component {
   deleteList = id => {
 		this.setState(prevState => {
 			const allLists = prevState.allLists;
+      const comLists = allLists[id]
 			delete allLists[id];
 			const newState = {
 				...prevState,
-				...allLists
+				...allLists,
 			};
+      const newStateCom = {
+        ...comLists,
+      };
+
 			this.saveLists(newState.allLists);
+      this.saveLists(newStateCom.comLists);
+      console.log('this.state', this.state.comLists);
+      console.log('comlists', comLists);
+
+      // this.clearAsyncStorage()
 			return { ...newState };
 		});
 	};
+
+  // clearAsyncStorage = async() => {
+  //   AsyncStorage.clear();
+  // }
 
   completeList = id => {
   this.setState(prevState => {
@@ -144,6 +163,7 @@ export default class Main extends React.Component {
           />
         </View>
         <View style={styles.listContainer}>
+
         <View style={styles.list}>
         		{loadingLists ? (
         			   <ScrollView contentContainerStyle={styles.scrollableList}>
