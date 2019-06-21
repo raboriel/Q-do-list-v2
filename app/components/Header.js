@@ -9,7 +9,7 @@ const Header = ({ title }) => (
 );
 const styles = StyleSheet.create({
   headerContainer: {
-    marginTop: 30
+    marginTop: 40
   },
   headerText: {
     color: 'white',

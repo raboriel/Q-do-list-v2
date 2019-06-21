@@ -16,13 +16,13 @@ import uuid from 'uuid/v1';
 // import from components
 import Header from './components/Header';
 import Input from './components/Input';
-import List from './components/List';
+import List from './components/Nolist';
 
 // set devise's width
 const { width } = Dimensions.get('window');
-const headerTitle = 'To do';
+const headerTitle = 'Not to DO';
 
-export default class Main extends React.Component {
+export default class NotDo extends React.Component {
   state = {
     inputValue: '',
     loadingLists: false,
@@ -45,7 +45,7 @@ export default class Main extends React.Component {
   // get lists from AsyncStorage
   loadingLists = async () => {
    try {
-     const allLists = await AsyncStorage.getItem('Todos');
+     const allLists = await AsyncStorage.getItem('Notdo');
      this.setState({
        loadingLists: true,
        allLists: JSON.parse(allLists) || {}
@@ -57,7 +57,7 @@ export default class Main extends React.Component {
 
  loadingComLists = async () => {
   try {
-    const comLists = await AsyncStorage.getItem('Todos');
+    const comLists = await AsyncStorage.getItem('Notdo');
     this.setState({
       loadingComLists: true,
       comLists: JSON.parse(comLists) || {}
@@ -152,13 +152,13 @@ export default class Main extends React.Component {
   };
 
   saveLists = newList => {
-   const saveList = AsyncStorage.setItem('Todos', JSON.stringify(newList));
+   const saveList = AsyncStorage.setItem('Notdo', JSON.stringify(newList));
   };
   render() {
     const { inputValue, loadingLists, allLists, comLists, isCompleted} = this.state;
     return (
       <LinearGradient
-        colors={['#1C4670', '#2c4660']}
+        colors={['#870A30', '#58061f']}
         style={styles.container}
       >
         <StatusBar barStyle="light-content" />
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   listContainer: {
-    backgroundColor: '#EBF5F7',
+    backgroundColor: '#EFEBE2',
     flex: 1,
     width: width - 25,
     borderTopLeftRadius: 10,

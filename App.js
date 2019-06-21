@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from './app/Main';
-import Completed from './app/Completed';
+import NotDo from './app/Notdo';
 // import navigation from react-navigation
 // $ yarn add react-navigation
 import {
@@ -18,7 +18,7 @@ const TodoStack = createStackNavigator({
 })
 
 const DiaryStack = createStackNavigator({
-  Diary: Completed
+  NotDo: NotDo
 })
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
@@ -27,8 +27,8 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
   let iconName;
   if (routeName === 'Todo') {
     iconName = `md-checkbox${focused ? '' : '-outline'}`;
-  } else if (routeName === 'Completed') {
-    iconName = `ios-archive${focused ? '' : ''}`;
+  } else if (routeName === 'NotDo') {
+    iconName = `md-close${focused ? '' : ''}`;
   }
   return <IconComponent name={iconName} size={22} color={tintColor} />;
 };
@@ -36,7 +36,7 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
 // Tab Navigation
 const TabNavigator = createBottomTabNavigator({
   Todo: Main,
-  Completed: Completed,
+  NotDo: NotDo,
 },
 {
   defaultNavigationOptions: ({ navigation }) => ({
