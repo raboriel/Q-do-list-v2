@@ -1,5 +1,4 @@
 # Q Do List v2
-# Q Do List v2
 A private todo list app developed using react native. 
 A simple todo list app to help you accomplish your tasks. 
 A simple todo list app to help you accomplish your tasks. 
