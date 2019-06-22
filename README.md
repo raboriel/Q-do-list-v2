@@ -4,7 +4,7 @@ A simple todo list app to help you accomplish your tasks.
 A simple todo list app to help you accomplish your tasks. 
 Also, not do list helps to repair your bad habits.
 
-<p align="center">
+<p>
     <img src="Resources/qdolist.png" alt="Mockup" height="400" />
 </p>
 
