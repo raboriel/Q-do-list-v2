@@ -11,7 +11,7 @@
     "@terrylinla/react-native-sketch-canvas": "^0.8.0",
     "expo": "^33.0.6",
     "expo-linear-gradient": "~5.0.1",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "npm": "^6.9.0",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
